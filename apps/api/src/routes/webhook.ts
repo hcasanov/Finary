@@ -32,7 +32,7 @@ webhookRouter.post('/hubspot', async (c) => {
   const hubspot = createHubSpotClient(process.env['HUBSPOT_ACCESS_TOKEN'] ?? '');
   const contact = await getContact(hubspot, body.contactId);
 
-  if (contact.properties.finary_pipeline_started != null) {
+  if (contact.properties.finary_pipeline_started) {
     return c.json({
       status: 'skipped',
       reason: 'pipeline_already_started',
