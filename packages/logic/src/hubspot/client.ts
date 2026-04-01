@@ -23,12 +23,6 @@ export function createHubSpotClient(accessToken: string): HubSpotClient {
       }
     }
 
-    // Log outgoing request
-    console.log(`[HubSpot] → ${method} ${path}`, {
-      params: params ?? {},
-      body: body ?? null,
-    });
-
     const response = await fetch(url.toString(), {
       method,
       headers: {
@@ -40,20 +34,14 @@ export function createHubSpotClient(accessToken: string): HubSpotClient {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error(`[HubSpot] ✗ ${method} ${path} → ${response.status}`, errorText);
       throw new Error(`HubSpot API ${method} ${path} → ${response.status}: ${errorText}`);
     }
 
-    // Some endpoints return 204 No Content
     if (response.status === 204) {
-      console.log(`[HubSpot] ← ${response.status} ${method} ${path} (no content)`);
       return undefined as T;
     }
 
     const data = await response.json() as T;
-
-    // Log response — truncate arrays to avoid flooding the console
-    console.log(`[HubSpot] ← ${response.status} ${method} ${path}`, JSON.stringify(data, null, 2));
 
     return data;
   }
