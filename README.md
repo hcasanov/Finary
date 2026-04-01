@@ -62,10 +62,15 @@ L'UI est disponible sur `http://localhost:8288`.
 
 ### 3. Tester le webhook manuellement
 
-Pour simuler un appel HubSpot entrant (contact ID à adapter) :
+S'assurer que le serveur API (étape 1) et le serveur Inngest (étape 2) tournent, puis :
 
 ```bash
 node scripts/fetch-hubspot-contact.mjs
 ```
 
-Récupère le contact et ses notes depuis HubSpot et envoie le payload à `http://localhost:3000`.
+Le script :
+1. Récupère le contact et ses notes depuis HubSpot
+2. Affiche le payload JSON dans la console
+3. Envoie le payload en POST à `http://localhost:3000`
+
+Le pipeline Inngest se déclenche automatiquement — suivre l'exécution sur `http://localhost:8288`.
