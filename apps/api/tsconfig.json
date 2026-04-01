@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "paths": {
+      "@finary/types": ["../../packages/types/src/index"],
+      "@finary/logic": ["../../packages/logic/src/index"]
+    }
+  },
+  "include": ["src", "api"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@finary/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch --env-file=../../.env src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@finary/logic": "workspace:*",
+    "@finary/types": "workspace:*",
+    "@hono/node-server": "^1.14.1",
+    "hono": "^4.7.5",
+    "inngest": "^3.29.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  }
+}
