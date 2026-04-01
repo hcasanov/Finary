@@ -62,7 +62,7 @@ Dans un second terminal :
 npm run inngest
 ```
 
-Démarre le dev server Inngest et le connecte à `http://localhost:3000/api/inngest`.  
+Démarre le dev server Inngest et le connecte à `http://localhost:3000/inngest`.  
 L'UI est disponible sur `http://localhost:8288`.
 
 ### 3. Tester le webhook manuellement
