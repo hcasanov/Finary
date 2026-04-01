@@ -23,13 +23,18 @@ Copie `.env.example` en `.env` et remplis les variables :
 cp .env.example .env
 ```
 
+Deux variables sont obligatoires pour faire tourner l'app :
+
+- `HUBSPOT_ACCESS_TOKEN` — Token HubSpot Private App (`pat-eu1-...`), disponible dans HubSpot → Settings → Integrations → Private Apps
+- `GOOGLE_GENERATIVE_AI_API_KEY` — Clé API Google Gemini, disponible sur [Google AI Studio](https://aistudio.google.com/app/apikey)
+
+Variables optionnelles (prod uniquement) :
+
 | Variable                    | Description                                  |
 |-----------------------------|----------------------------------------------|
-| `HUBSPOT_ACCESS_TOKEN`      | Token HubSpot Private App (pat-eu1-...)      |
 | `HUBSPOT_WEBHOOK_SECRET`    | Secret pour valider les signatures HubSpot   |
-| `GOOGLE_GENERATIVE_AI_API_KEY` | Clé API Google Gemini                     |
-| `INNGEST_EVENT_KEY`         | Clé Inngest (prod uniquement)                |
-| `INNGEST_SIGNING_KEY`       | Signing key Inngest (prod uniquement)        |
+| `INNGEST_EVENT_KEY`         | Clé Inngest                                  |
+| `INNGEST_SIGNING_KEY`       | Signing key Inngest                          |
 
 ## Setup HubSpot
 
